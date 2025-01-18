@@ -1,3 +1,5 @@
 # car-dealership-website
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/All1nois/car-dealership-website)
+Лендинг сайта для автосалона созданный во время обучения
+
+A website landing page for a car dealership created during training
