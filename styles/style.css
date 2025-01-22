@@ -18,6 +18,7 @@ body {
 }
 
 .button {
+  display: block;
   width: 344px;
   height: 69px;
   padding: 20px;
@@ -49,8 +50,8 @@ body {
 }
 
 .car-action .button{
-  width: 364px;
-  padding-bottom: 26px;
+  width: 100%;
+  
 }
 
 .header {

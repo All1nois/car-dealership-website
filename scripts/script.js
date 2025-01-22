@@ -24,10 +24,10 @@ filterItems.forEach(item => {
     }
 
 })
-let hasError = false;
 
 
 document.getElementById("order-action").addEventListener("click", function(){
+    let hasError = false;
     const fields = [carField, nameField, phoneField];
     fields.forEach((field) => {
         if(field.value.trim() === ""){
