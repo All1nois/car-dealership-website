@@ -24,24 +24,31 @@ filterItems.forEach(item => {
     }
 
 })
+let hasError = false;
 
-function validateField(field){
-    if(field.value.trim() === ""){
-        field.style.borderColor = "red";
-        return false;
-    }else{
-        field.style.borderColor = "white";
-        return true;
-    }
-}
 
 document.getElementById("order-action").addEventListener("click", function(){
     const fields = [carField, nameField, phoneField];
-    const allValid = fields.every(validateField);
+    fields.forEach((field) => {
+        if(field.value.trim() === ""){
+            field.style.borderColor = "red";
+            hasError = true;
+        }else{
+            field.style.borderColor = "white";
+        }
+    });
 
-    if (allValid){
+    // Проверка для phoneField
+    const phoneValue = phoneField.value.trim();
+    if (!/^\d{10,}$/.test(phoneValue)) {
+        phoneField.style.borderColor = "red";
+        alert("Введите корректный номер телефона (только цифры и минимум 10 символов).");
+        hasError = true;
+    }
+
+    if (!hasError){
         alert("Спасибо за заявку! Мы скоро свяжемся с вами!");
         fields.forEach(field => field.value = "");
-        fields.forEach(field => field.style.borderColor = "White");
+        
     }
 });
